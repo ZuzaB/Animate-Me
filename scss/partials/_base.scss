@@ -6,7 +6,7 @@
 
 .main{
         width: 30vw;
-        min-width: 300px;
+        min-width: 400px;
         height: 57vh;
         min-height: 300px;
         border: 1px solid bisque;
@@ -235,4 +235,45 @@
     border-bottom: 8px solid #000;
     left: 191px;
     top: 68px;
+}
+.leg-left {
+    width: 24px;
+    height: 74px;
+    position: absolute;
+    z-index: -1;
+    border-bottom: 12px solid #000;
+    border-right: 8px solid #000;
+    left: 78px;
+    top: 189px;
+    border-radius: 5px;
+    transform: rotate(16deg);
+}
+.leg-right {
+    width: 24px;
+    height: 90px;
+    position: absolute;
+    z-index: 3;
+    border-bottom: 12px solid #000;
+    border-left: 8px solid #000;
+    left: 130px;
+    top: 175px;
+    border-radius: 5px;
+}
+.hand {
+    width: 10px;
+    height: 58px;
+    position: absolute;
+    z-index: 4;
+    background-color: #000;
+    border-radius: 5px;
+}
+.hand-left {
+    left: 137px;
+    top: 46px;
+    transform: rotate(-242deg);
+}
+.hand-right {
+    left: 247px;
+    top: 59px;
+    transform: rotate(242deg);
 }
