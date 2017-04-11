@@ -177,21 +177,62 @@
 }
 
 .eye{
-    width: 100px;
-    height: 100px; 
-    position:absolute;
+    width: 20px;
+    height: 22px; 
+    position: absolute;
     background: #fff;
     z-index: 3;
     border-radius: 50%;
     border: 2px solid black;
-    
-    .right{
-       left: 12px;
-        top: 21px; 
-    }
-    
-    .left{
-       left: 10px;
-        top: 10px; 
-    } 
+}
+
+.right{
+    left: 181px;
+    top: 46px;
+}
+
+.left{
+    left: 208px;
+    top: 48px;
+} 
+
+.eye-ball{
+    width: 15px;
+    height: 15px;
+    position: absolute;
+    background: #000;
+    z-index: 3;
+    border-radius: 50%;
+}
+//ustawić zrenice
+//#right{
+//    left: 181px;
+//    top: 46px; 
+//}
+//
+//#left{
+//    left: 208px;
+//    top: 48px;
+//}
+
+.nose{
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    z-index: 3;
+    border-radius: 50%;
+    border-top: 2px solid #000;
+    left: 199px;
+    top: 70px;
+}
+
+.smile{
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    z-index: 3;
+    border-radius: 50%;
+    border-bottom: 8px solid #000;
+    left: 191px;
+    top: 68px;
 }
