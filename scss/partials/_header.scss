@@ -22,6 +22,14 @@ header em:after {
   width: 10em;
   display: block;
   margin: 0 auto; 
+  animation: grow 6s 1 ease;
+}
+
+@keyframes grow {
+  0% {
+    width: 1em; }
+  100% {
+    width: 10em; } 
 }
 
 .fadein {

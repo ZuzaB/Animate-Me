@@ -10,7 +10,7 @@ section{
         min-width: 300px;
         height: 57vh;
         min-height: 300px;
-        border: 3px solid bisque;
+        border: 1px solid bisque;
         margin-top: 10px;
         margin-bottom: 10px;
     }
@@ -25,7 +25,34 @@ section{
     justify-content: space-around;
     flex-wrap: wrap;
 }
-
 .hidden{
     display: none;
 }
+
+.hover{
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border:0;
+    background-color: #FFE866;
+    font-family: 'Lobster', 'Arial', cursive;
+    font-size: 30px;
+    text-align: center;
+    line-height: 300px;
+    text-shadow: 1px 2px #5d5d5d;
+    opacity: 0;
+    color: rgba(255, 255, 255, 0); 
+    display: none; //poprawić żeby działało jak na pustym div
+    &:hover{
+        opacity: 0.5;
+        color: rgba(255, 255, 255, 1); 
+    }
+}
+
+.banana{
+    width: 80px;
+    height: 80px; 
+    border-radius: 50%; 
+    box-shadow: 15px 15px 0 0 #FFE866;
+}
+
