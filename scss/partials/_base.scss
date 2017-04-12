@@ -4,16 +4,6 @@
   box-sizing: border-box;
 }
 
-.main{
-        width: 30vw;
-        min-width: 400px;
-        height: 57vh;
-        min-height: 300px;
-        border: 1px solid bisque;
-        margin-top: 10px;
-        margin-bottom: 10px;
-}
-
 .container{
     display: flex;
     max-width: 1000px;
@@ -23,6 +13,18 @@
     justify-content: space-around;
     flex-wrap: wrap;
 }
+
+.main{
+    width: 30vw;
+    min-width: 400px;
+    height: 57vh;
+    min-height: 357px;
+    border: 1px solid bisque;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
 .hidden{
     display: none;
 }
@@ -46,22 +48,15 @@
         color: rgba(255, 255, 255, 1); 
     }
 }
-/*style do animacji*/
-//.banana{
-//    width: 80px;
-//    height: 80px; 
-//    border-radius: 50%;
-//    border: 0;
-//    box-shadow: 15px 15px 0 0 #FFE866;
-//}
+
+/*drowing banana*/
 
 .banana {
 	height: 200px;
     width: 240px;
     position: relative;
  	margin-top: 70px;
-    margin-right: 5px;
-    text-align: center;
+    margin-left: 25px;
     border:3px solid #B37E15;
     border-radius: 200px 90px 300px 200px;
     box-shadow: inset -2px -2px 3px #B37E15;
@@ -113,6 +108,7 @@
 	top: -18px;
 	border-radius: 200px 20px 300px 200px;
 }
+
 //nadaje kształu końcówce
 .shape {
 	width:60px;
@@ -277,3 +273,37 @@
     top: 59px;
     transform: rotate(242deg);
 }
+/* end banana drowing*/
+
+/*writing area*/
+.write{
+    position: relative;
+    height: 200px;
+    width: 300px;
+
+    
+background: rgba(98,125,77,1);
+background: -moz-linear-gradient(top, rgba(98,125,77,1) 4%, rgba(98,125,77,1) 45%, rgba(31,59,8,1) 100%);
+background: -webkit-gradient(left top, left bottom, color-stop(4%, rgba(98,125,77,1)), color-stop(45%, rgba(98,125,77,1)), color-stop(100%, rgba(31,59,8,1)));
+background: -webkit-linear-gradient(top, rgba(98,125,77,1) 4%, rgba(98,125,77,1) 45%, rgba(31,59,8,1) 100%);
+background: -o-linear-gradient(top, rgba(98,125,77,1) 4%, rgba(98,125,77,1) 45%, rgba(31,59,8,1) 100%);
+background: -ms-linear-gradient(top, rgba(98,125,77,1) 4%, rgba(98,125,77,1) 45%, rgba(31,59,8,1) 100%);
+background: linear-gradient(to bottom, rgba(98,125,77,1) 4%, rgba(98,125,77,1) 45%, rgba(31,59,8,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1f3b08', GradientType=0 );
+
+    border-bottom: 4px solid rgb(192, 192, 192);
+    box-shadow: 0px 5px 0px 0px rgb(216, 216, 216); 
+    margin: 20px auto 100px auto;
+    
+}
+
+/*animated div*/
+.writer{
+    position: absolute;
+    height: 100px;
+    width: 50px;
+    border: 1px solid red;
+    left: 10px;
+    top: 10px;
+}
+
