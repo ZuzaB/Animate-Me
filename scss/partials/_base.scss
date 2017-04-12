@@ -281,22 +281,26 @@
 }
 
 /*animated div*/
-.writer{
+.sprite{
     position: absolute;
-    height: 100px;
-    width: 50px;
-    border: 1px solid red;
+    height: 74px;
+    width: 132px;
     left: 219px;
-    top: 96px;
-    background-image: url('img/wizard.png'); background:  no-repeat; 
-    overflow: hidden; 
-    text-indent: -9999px; 
-    text-align: left;
-//    background-position: -2px -1158px; width: 402px; 
-//    height: 343px;
-    
+    top: 126px;
+    background-image: url('../img/wizard.png'); 
+    background-position: 0px 672px;
+    animation: walk 1s steps(4) infinite, way 7s 1 ease-in-out; 
+}
+@keyframes walk{
+    0%{ background-position: 0 -600px;}
+    100%{ background-position: 0 -900px;}
 }
 
+@keyframes way
+{
+  0% { transform:translateX(0);}
+  100% { transform:translateX(-270px); }
+}
 canvas{
     height: 170px;
     width: 240px;
