@@ -132,7 +132,7 @@
 .banana-top {
     height: 45px;
     width: 25px;
-    border-radius: 20px 25px 5px 5px;
+    border-radius: 15px 5px 5px 5px;
     position: absolute;
     left: 175px;
     top: -40px;
@@ -283,7 +283,7 @@
 /*animated div*/
 .wizard{
     position: absolute;
-    height: 74px;
+    height: 70px;
     width: 132px;
     left: 219px;
     top: 126px;
@@ -292,12 +292,14 @@
 }
 
 .animation{
-    animation: walk 1s steps(4) infinite, way 7s 1 ease-in-out; 
+    animation: walk 1s steps(4) infinite, way 7s 1 ease-in-out, wisper 700ms 7s steps(3), stay 100ms 7.5s; 
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
+    background-position: 0px 740px;
 }
 
-@keyframes walk{
+@keyframes walk
+{
     0%{ background-position: 0 -600px;}
     100%{ background-position: 0 -900px;}
 }
@@ -308,8 +310,16 @@
   100% { transform:translateX(-270px); }
 }
 
-.magic{
-   background-position: 0px 672px; 
+@keyframes wisper
+{
+      0%{ background-position: 0 -1062px;}
+    100%{ background-position: 0 -845px;} 
+}
+
+@keyframes stay
+{
+   0%{ background-position: 0 -1062px;} 
+ 100%{ background-position: 0 -1062px;}
 }
 
 canvas{

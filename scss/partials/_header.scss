@@ -3,20 +3,26 @@ header {
   height: 25vh;
   text-align: center;
   color: #5d5d5d;
+    font-family: 'Lobster', 'Arial', cursive, sans-serif;
 }
 
 header h1 {
   font-size: 10vh;
   margin-top: 5vh;
-  font-family: 'Lobster', 'Arial', cursive;
+  
 }
 
-header em {
+header span {
   font-size: 4vh;
-  font-family: 'Pangolin', cursive;
+//  font-family: 'Pangolin', cursive;
+  animation: fadein 6s 1 ease;
+}
+@keyframes fadein {
+  0% {opacity: 0; }
+  100% {opacity: 1; } 
 }
 
-header em:after {
+header span:after {
   content: '';
   border-bottom: 3px solid #617dbb;
   width: 10em;
@@ -26,10 +32,8 @@ header em:after {
 }
 
 @keyframes grow {
-  0% {
-    width: 1em; }
-  100% {
-    width: 10em; } 
+  0% {width: 1em; }
+  100% {width: 10em; } 
 }
 
 .fadein {
@@ -37,8 +41,6 @@ header em:after {
 }
 
 @keyframes fadein {
-  0% {
-    opacity: 0; }
-  100% {
-    opacity: 1; } 
+  0% {opacity: 0; }
+  100% {opacity: 1; } 
 }
