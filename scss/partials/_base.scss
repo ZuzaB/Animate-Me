@@ -234,24 +234,25 @@
 }
 
 .hand {
-    width: 10px;
-    height: 58px;
+    width: 56px;
+    height: 73px;
     position: absolute;
     z-index: 4;
-    background-color: #000;
-    border-radius: 5px;
+    background-size: cover;
 }
 
 .hand-left {
-    left: 137px;
-    top: 46px;
-    transform: rotate(-242deg);
+    left: 102px;
+    top: 81px;
+    background-image: url(../img/left.png);
+    transform: rotate(18deg);
 }
 
 .hand-right {
-    left: 247px;
-    top: 59px;
-    transform: rotate(242deg);
+    left: 211px;
+    top: 106px;
+    background-image: url(../img/right.png);
+    transform: rotate(20deg);
 }
 
 
@@ -307,7 +308,7 @@
 @keyframes way
 {
   0% { transform:translateX(0);}
-  100% { transform:translateX(-270px); }
+  100% { transform:translateX(-220px); }
 }
 
 @keyframes wisper
