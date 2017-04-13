@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function(){
-    
+    //first animation
     var canvas = document.querySelector('canvas');
     var input = document.querySelector('input');
     var button = document.getElementById('write');
@@ -50,8 +50,6 @@ document.addEventListener('DOMContentLoaded', function(){
            setTimeout(writing, 8000);
        ctx.clearRect(0, 0, canvas.width, canvas.height);
         input.value = '';
-
     })
-    
-
+    //end
 })

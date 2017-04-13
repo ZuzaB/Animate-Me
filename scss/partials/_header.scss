@@ -15,11 +15,7 @@ header h1 {
 header span {
   font-size: 4vh;
 //  font-family: 'Pangolin', cursive;
-  animation: fadein 6s 1 ease;
-}
-@keyframes fadein {
-  0% {opacity: 0; }
-  100% {opacity: 1; } 
+  animation: fadein 6s 1 ease-in;
 }
 
 header span:after {
