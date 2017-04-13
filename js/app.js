@@ -1,5 +1,5 @@
-document.addEventListener('DOMContentLoaded', function(){
-    //first animation
+$(function(){  
+//wizard animation
     var canvas = document.querySelector('canvas');
     var input = document.querySelector('input');
     var button = document.getElementById('write');
@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function(){
     var x = 0;
     var i = 0;
     var wizard = document.querySelector('.wizard');
-    console.log(wizard);
+  
     ctx.font = '30px Pangolin, cursive, sans-serif';
     ctx.lineWidth = 3;
     ctx.lineJoin = 'round';
@@ -48,8 +48,34 @@ document.addEventListener('DOMContentLoaded', function(){
                 }
             }
            setTimeout(writing, 8000);
-       ctx.clearRect(0, 0, canvas.width, canvas.height);
+       ctx.clearRect(0, 0, canvas.width, canvas.height);//zmienić bo nie dokońca dobrze działa
         input.value = '';
     })
-    //end
+   //end wizard animation
+    
+ //banana animation
+    var $banana = $('.banana');
+    var $eyeBalls = $banana.find('.eye-ball');
+    var $handRight = $banana.find('.hand-right');
+    var $handLeft = $banana.find('.hand-left');
+    var $legRight = $banana.find('.leg-right');
+    var $legLeft = $banana.find('.leg-left');
+    var $mouth = $banana.find('.smile');
+    
+    //control buttons
+    var $control = $('.control');
+    var $leftHandCtrl = $control.find('.left-hand');
+    var $rightHandCtrl = $control.find('.right-hand');
+    var $leftLegCtrl = $control.find('.left-leg');
+    var $rightLegCtrl = $control.find('.right-leg');
+    var $leftEyeCtrl = $control.find('.left-eye');
+    var $rightEyeCtrl = $control.find('.right-eye');
+    var $mouthCtrl = $control.find('.mouth');
+    var $animate = $control.find('.go');
+   
+    
+    
+    
+    console.log($control, $leftHandCtrl, $rightHandCtrl, $leftLegCtrl, $rightLegCtrl, $leftEyeCtrl, $rightEyeCtrl, $mouthCtrl, $animate);
+
 })

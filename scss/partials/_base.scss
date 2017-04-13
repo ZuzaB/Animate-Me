@@ -154,7 +154,7 @@
     background: #fff;
     z-index: 3;
     border-radius: 50%;
-    border: 2px solid black;
+    border: 1px solid black;
 }
 
 .right {
@@ -174,18 +174,10 @@
     background: #000;
     z-index: 3;
     border-radius: 50%;
+    left: 2px;
+    top: 2px;
 }
 
-//ustawić zrenice
-//#right{
-//    left: 181px;
-//    top: 46px; 
-//}
-//
-//#left{
-//    left: 208px;
-//    top: 48px;
-//}
 .nose {
     width: 10px;
     height: 10px;
@@ -235,15 +227,15 @@
 
 .hand {
     width: 56px;
-    height: 73px;
+    height: 74px;
     position: absolute;
     z-index: 4;
     background-size: cover;
 }
 
 .hand-left {
-    left: 102px;
-    top: 81px;
+    left: 105px;
+    top: 76px;
     background-image: url(../img/left.png);
     transform: rotate(18deg);
 }
