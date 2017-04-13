@@ -157,12 +157,12 @@
     border: 1px solid black;
 }
 
-.right {
+.left {
     left: 181px;
     top: 46px;
 }
 
-.left {
+.right {
     left: 208px;
     top: 48px;
 }
@@ -200,7 +200,7 @@
     top: 68px;
 }
 
-.leg-left {
+.leg-right {
     width: 24px;
     height: 74px;
     position: absolute;
@@ -211,9 +211,22 @@
     top: 189px;
     border-radius: 5px;
     transform: rotate(16deg);
+    transform-origin: 100% 0%;
 }
 
-.leg-right {
+.move-right-leg{
+   animation: moverl 4s 1 ease-in-out; 
+}
+
+@keyframes moverl
+{
+    0%{ transform: rotate(16deg);}
+    25%{ transform: rotate(-8deg);}
+    50%{ transform: rotate(57deg);}
+    100%{ transform: rotate(16deg);}
+}
+
+.leg-left {
     width: 24px;
     height: 90px;
     position: absolute;
@@ -223,6 +236,19 @@
     left: 130px;
     top: 175px;
     border-radius: 5px;
+    transform-origin: 0% 0%;
+}
+
+.move-left-leg{
+   animation: movell 4s 1 ease-in-out; 
+}
+
+@keyframes movell
+{
+    0%{ transform: rotate(0deg);}
+    25%{ transform: rotate(15deg);}
+    50%{ transform: rotate(-46deg);}
+    100%{ transform: rotate(0deg);}
 }
 
 .hand {
@@ -233,18 +259,40 @@
     background-size: cover;
 }
 
-.hand-left {
-    left: 105px;
-    top: 76px;
+.hand-right {
+    left: 118px;
+    top: 85px;
     background-image: url(../img/left.png);
-    transform: rotate(18deg);
+    transform: rotate(26deg);
+    transform-origin: 100% 0%;
+}
+.move-right-hand{
+   animation: movelh 4s 1 ease-in-out; 
 }
 
-.hand-right {
-    left: 211px;
-    top: 106px;
+@keyframes movelh
+{
+    0%{ transform: rotate(26deg);}
+    50%{ transform: rotate(116deg);}
+    100%{ transform: rotate(26deg);}
+}
+
+.hand-left {
+    left: 224px;
+    top: 97px;
     background-image: url(../img/right.png);
-    transform: rotate(20deg);
+    transform: rotate(27deg);
+    transform-origin: 0% 0%;
+}
+.move-left-hand{
+   animation: moverh 4s 1 ease-in-out; 
+}
+
+@keyframes moverh
+{
+    0%{ transform: rotate(27deg);}
+    50%{ transform: rotate(-80deg);}
+    100%{ transform: rotate(27deg);}
 }
 
 

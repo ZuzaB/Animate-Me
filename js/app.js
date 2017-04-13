@@ -56,6 +56,8 @@ $(function(){
  //banana animation
     var $banana = $('.banana');
     var $eyeBalls = $banana.find('.eye-ball');
+    var $eyeBallRight = $eyeBalls.get(0);
+    var $eyeBallLeft = $eyeBalls.get(1);
     var $handRight = $banana.find('.hand-right');
     var $handLeft = $banana.find('.hand-left');
     var $legRight = $banana.find('.leg-right');
@@ -73,9 +75,17 @@ $(function(){
     var $mouthCtrl = $control.find('.mouth');
     var $animate = $control.find('.go');
    
+    var arrPart = [$handLeft, $handRight, $legLeft, $legRight, $mouth];
+    var arrCtrl = [$leftHandCtrl, $rightHandCtrl, $leftLegCtrl, $rightLegCtrl, $mouthCtrl];
+    var arrClasses = ['move-left-hand', 'move-right-hand', 'move-left-leg', 'move-right-leg', 'move-mouth'];
+    //function for elements
     
     
-    
-    console.log($control, $leftHandCtrl, $rightHandCtrl, $leftLegCtrl, $rightLegCtrl, $leftEyeCtrl, $rightEyeCtrl, $mouthCtrl, $animate);
+//    for(i=0; i< arrPart.length; i++){
+i=3;
+        arrCtrl[i].on('mouseover', function(){
+          arrPart[i].addClass(arrClasses[i]); 
+        })
+//   }
 
 })
