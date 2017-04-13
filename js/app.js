@@ -1,18 +1,17 @@
 document.addEventListener('DOMContentLoaded', function(){
     
-    var canv = document.querySelector('canvas');
+    var canvas = document.querySelector('canvas');
     var input = document.querySelector('input');
-//    var inputVal = input.value;
     var button = document.querySelector('button');
     
-    var ctx = canv.getContext('2d');
+    var ctx = canvas.getContext('2d');
     var dashLen = 220;
     var dashOffset = dashLen;
     var speed = 5;//może zmienić na 2
-//    var txt = inputVal;
     var x = 0;
     var i = 0;
-    
+    var wizard = document.querySelector('.wizard');
+    console.log(wizard);
     ctx.font = '30px Pangolin, cursive, sans-serif';
     ctx.lineWidth = 3;
     ctx.lineJoin = 'round';
@@ -23,7 +22,9 @@ document.addEventListener('DOMContentLoaded', function(){
         var inputVal = input.value;
         var txt = inputVal;
         
-        if (inputVal.length <= 10) {
+        wizard.classList.add('animation');
+        
+        if (inputVal.length <= 18) {
             var txt = inputVal;
              }else{
             var txt = "your text is too long";
@@ -44,8 +45,8 @@ document.addEventListener('DOMContentLoaded', function(){
                     if (i < txt.length) requestAnimationFrame(writing);
                 }
             }
-            writing();
-       
+           setTimeout(writing(), 7000);
+//        ctx.clearRect(0, 0, canvas.width, canvas.height);
         input.value = '';
 
     })

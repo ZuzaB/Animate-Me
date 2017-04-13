@@ -281,7 +281,7 @@
 }
 
 /*animated div*/
-.sprite{
+.wizard{
     position: absolute;
     height: 74px;
     width: 132px;
@@ -289,8 +289,14 @@
     top: 126px;
     background-image: url('../img/wizard.png'); 
     background-position: 0px 672px;
-    animation: walk 1s steps(4) infinite, way 7s 1 ease-in-out; 
 }
+
+.animation{
+    animation: walk 1s steps(4) infinite, way 7s 1 ease-in-out; 
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
 @keyframes walk{
     0%{ background-position: 0 -600px;}
     100%{ background-position: 0 -900px;}
@@ -301,6 +307,11 @@
   0% { transform:translateX(0);}
   100% { transform:translateX(-270px); }
 }
+
+.magic{
+   background-position: 0px 672px; 
+}
+
 canvas{
     height: 170px;
     width: 240px;
