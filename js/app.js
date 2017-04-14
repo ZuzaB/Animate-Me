@@ -70,11 +70,11 @@ $(function(){
     var $rightLegCtrl = $control.find('.right-leg');
     var $eyeballsCtrl = $control.find('.eyeballs');
     var $mouthCtrl = $control.find('.mouth');
-    var $animate = $control.find('.go');
+    var $animate = $('.go');
    
-    var arrPart = [$handLeft, $handRight, $legLeft, $legRight, $mouth];
-    var arrCtrl = [$leftHandCtrl, $rightHandCtrl, $leftLegCtrl, $rightLegCtrl, $mouthCtrl];
-    var arrClasses = ['move-left-hand', 'move-right-hand', 'move-left-leg', 'move-right-leg', 'move-mouth'];
+    var arrPart = [$handLeft, $handRight, $legLeft, $legRight, $mouth, $eyeBalls];
+    var arrCtrl = [$leftHandCtrl, $rightHandCtrl, $leftLegCtrl, $rightLegCtrl, $mouthCtrl, $eyeballsCtrl];
+    var arrClasses = ['move-left-hand', 'move-right-hand', 'move-left-leg', 'move-right-leg', 'move-mouth', 'move-eyeballs'];
     
     
 //animation demos    
@@ -86,10 +86,73 @@ $(function(){
           arrPart[j].removeClass(arrClasses[j]); 
         })
    } 
-    $eyeballsCtrl.on('mouseenter', function(){
-          $eyeBalls.addClass('move-eyeballs'); 
-        })
-    $eyeballsCtrl.on('mouseleave', function(){
-          $eyeBalls.removeClass('move-eyeballs'); 
-        })
+    
+//animation sequences
+    
+    function moveLeftHand(){
+        $handLeft.addClass('move-left-hand');
+        setTimeout(function(){$handLeft.removeClass('move-left-hand');}, 4000);
+    }
+    
+    function moveRightHand(){
+        $handRight.addClass('move-right-hand');
+        setTimeout(function(){$handRight.removeClass('move-right-hand');}, 4000);
+    }
+    
+    function moveLeftLeg(){
+        $legLeft.addClass('move-left-leg');
+        setTimeout(function(){$legLeft.removeClass('move-left-leg');}, 4000);
+    }
+   
+    function moveRightLeg(){
+        $legRight.addClass('move-right-leg');
+        setTimeout(function(){$legRight.removeClass('move-right-leg');}, 4000);
+    }
+    
+    function moveMouth(){
+        $mouth.addClass('move-mouth');
+        setTimeout(function(){$mouth.removeClass('move-mouth');}, 2000);
+    }
+    
+    function moveEyeballs(){
+        $eyeBalls.addClass('move-eyeballs');
+        setTimeout(function(){$eyeBalls.removeClass('move-eyeballs');}, 3000);
+    }
+    
+    var arrAnimation = [];
+    var $buttons = $control.children();
+    
+ //geting information about animation sequene   
+    $buttons.on('click', function(){
+        var className = $(this).attr('class');
+        arrAnimation.push(className);
+       
+    })
+    
+    
+    $animate.on('click', function(){
+         console.log(arrAnimation);
+        console.log('arrAnimation');
+        for (var i=0; i< arrAnimation.length; i++){
+            if (arrAnimation[i] === 'eyeballs'){
+                moveEyeballs();
+            }
+            if(arrAnimation[i] === 'mouth'){
+                moveMouth();
+            }
+            if(arrAnimation[i] === 'left-hand'){
+                moveLeftHand();
+            }
+            if(arrAnimation[i] === 'right-hand'){
+               moveRightHand();
+            }
+            if(arrAnimation[i] === 'left-leg'){
+                moveLeftLeg();
+            }
+            if(arrAnimation[i] === 'right-leg'){
+                moveRightLeg();
+            }
+         }
+    })
+    
 })
