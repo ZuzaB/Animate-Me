@@ -178,6 +178,19 @@
     top: 2px;
 }
 
+.move-eyeballs{
+    animation: movee 3s 1;
+}
+
+@keyframes movee
+{
+    0%{transform:translate(0px, 0);}
+    25%{transform:translate(-2px, 0);}
+    50%{transform:translate(0px, 0);}
+    75%{transform:translate(2px, 0);}
+    100% {transform:translate(0px, 0);}
+}
+
 .nose {
     width: 10px;
     height: 10px;
@@ -198,6 +211,17 @@
     border-bottom: 8px solid #000;
     left: 191px;
     top: 68px;
+}
+
+.move-mouth{
+    animation: movem 2s 1 ease;
+}
+
+@keyframes movem
+{
+    0%{border-radius: 50%;}
+    50%{border-radius: 26%;}
+    100%{border-radius: 50%;}
 }
 
 .leg-right {

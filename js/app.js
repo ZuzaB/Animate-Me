@@ -56,8 +56,6 @@ $(function(){
  //banana animation
     var $banana = $('.banana');
     var $eyeBalls = $banana.find('.eye-ball');
-    var $eyeBallRight = $eyeBalls.get(0);
-    var $eyeBallLeft = $eyeBalls.get(1);
     var $handRight = $banana.find('.hand-right');
     var $handLeft = $banana.find('.hand-left');
     var $legRight = $banana.find('.leg-right');
@@ -70,22 +68,31 @@ $(function(){
     var $rightHandCtrl = $control.find('.right-hand');
     var $leftLegCtrl = $control.find('.left-leg');
     var $rightLegCtrl = $control.find('.right-leg');
-    var $leftEyeCtrl = $control.find('.left-eye');
-    var $rightEyeCtrl = $control.find('.right-eye');
+    var $eyeballsCtrl = $control.find('.eyeballs');
     var $mouthCtrl = $control.find('.mouth');
     var $animate = $control.find('.go');
    
     var arrPart = [$handLeft, $handRight, $legLeft, $legRight, $mouth];
     var arrCtrl = [$leftHandCtrl, $rightHandCtrl, $leftLegCtrl, $rightLegCtrl, $mouthCtrl];
     var arrClasses = ['move-left-hand', 'move-right-hand', 'move-left-leg', 'move-right-leg', 'move-mouth'];
-    //function for elements
     
     
-//    for(i=0; i< arrPart.length; i++){
-i=3;
-        arrCtrl[i].on('mouseover', function(){
-          arrPart[i].addClass(arrClasses[i]); 
+//animation demos    
+    for(let j=0; j< arrClasses.length; j++){
+        arrCtrl[j].on('mouseenter', function(){
+          arrPart[j].addClass(arrClasses[j]); 
         })
-//   }
-
+        arrCtrl[j].on('mouseleave', function(){
+          arrPart[j].removeClass(arrClasses[j]); 
+        })
+   } 
+//    $eyeballsCtrl.on('mouseenter', function(){
+//          $.each($eyeBalls, function(i, val){
+//              $(val).addClass('move-eyeballs'); 
+//              console.log('klik');
+//          })
+//        })
+//    $eyeballsCtrl.on('mouseleave', function(){
+//          $eyeBalls.removeClass('move-eyeballs'); 
+//        })
 })
