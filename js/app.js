@@ -86,13 +86,10 @@ $(function(){
           arrPart[j].removeClass(arrClasses[j]); 
         })
    } 
-//    $eyeballsCtrl.on('mouseenter', function(){
-//          $.each($eyeBalls, function(i, val){
-//              $(val).addClass('move-eyeballs'); 
-//              console.log('klik');
-//          })
-//        })
-//    $eyeballsCtrl.on('mouseleave', function(){
-//          $eyeBalls.removeClass('move-eyeballs'); 
-//        })
+    $eyeballsCtrl.on('mouseenter', function(){
+          $eyeBalls.addClass('move-eyeballs'); 
+        })
+    $eyeballsCtrl.on('mouseleave', function(){
+          $eyeBalls.removeClass('move-eyeballs'); 
+        })
 })
