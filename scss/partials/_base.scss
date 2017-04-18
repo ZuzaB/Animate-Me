@@ -411,10 +411,19 @@ button{
 
 .go{
      float: left; 
-     margin-top: 76px;
+     margin-top: 77px;
 }
 
 #write{
     background-color: #7c2aac;
     color: #fff;
+    font-size: 15px;
+    padding: 5px 15px;
+}
+
+input{
+    border: none;
+    border-bottom: 3px solid #7c2aac; 
+    font-family:'Pangolin', cursive;
+    font-size: 18px;
 }
