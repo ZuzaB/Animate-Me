@@ -1,4 +1,11 @@
 $(function(){  
+  
+    var $coverDivs = $('.cover');
+    
+    $coverDivs.on('click', function(){
+        $(this).addClass('hidden');
+    }) 
+    
 //wizard animation
     var canvas = document.querySelector('canvas');
     var input = document.querySelector('input');
@@ -122,7 +129,7 @@ $(function(){
     var arrAnimation = [];
     var $buttons = $control.children();
     
- //geting information about animation sequene   
+ //getting information about animation sequene   
     $buttons.on('click', function(){
         var className = $(this).attr('class');
         arrAnimation.push(className);
