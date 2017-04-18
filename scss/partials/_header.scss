@@ -3,7 +3,7 @@ header {
   height: 25vh;
   text-align: center;
   color: #5d5d5d;
-    font-family: 'Lobster', 'Arial', cursive, sans-serif;
+  font-family: 'Lobster', 'Arial', cursive, sans-serif;
 }
 
 header h1 {
@@ -14,8 +14,7 @@ header h1 {
 
 header span {
   font-size: 4vh;
-//  font-family: 'Pangolin', cursive;
-  animation: fadein 6s 1 ease-in;
+  animation: fadein 4s 1 ease-in;
 }
 
 header span:after {
