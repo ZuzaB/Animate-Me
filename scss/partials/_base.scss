@@ -171,16 +171,14 @@
 }
 
 .move-eyeballs{
-    @include animation(movee 3s 1);
+    @include animation(movee 2s 1);
 }
 
-@keyframes movee
+@include keyframes(movee)
 {
-    0%{transform:translate(0px, 0);}
+    0%, 50%, 100%{transform:translate(0px, 0);}
     25%{transform:translate(-2px, 0);}
-    50%{transform:translate(0px, 0);}
     75%{transform:translate(2px, 0);}
-    100% {transform:translate(0px, 0);}
 }
 
 .nose {
@@ -209,11 +207,10 @@
     @include animation(movem 2s 1 ease);
 }
 
-@keyframes movem
+@inculde keyframes(movem)
 {
-    0%{border-radius: 50%;}
+    0%, 100%{border-radius: 50%;}
     50%{border-radius: 26%;}
-    100%{border-radius: 50%;}
 }
 
 .leg-right {
@@ -231,15 +228,14 @@
 }
 
 .move-right-leg{
-   @include animation(moverl 4s 1 ease-in-out); 
+   @include animation(moverl 2s 1 ease-in-out); 
 }
 
-@keyframes moverl
+@include keyframes(moverl)
 {
-    0%{ transform: rotate(16deg);}
+    0%, 100%{ transform: rotate(16deg);}
     25%{ transform: rotate(-8deg);}
     50%{ transform: rotate(57deg);}
-    100%{ transform: rotate(16deg);}
 }
 
 .leg-left {
@@ -256,15 +252,14 @@
 }
 
 .move-left-leg{
-   @include animation(movell 4s 1 ease-in-out); 
+   @include animation(movell 2s 1 ease-in-out); 
 }
 
-@keyframes movell
+@include keyframes(movell)
 {
-    0%{ transform: rotate(0deg);}
+    0%, 100%{ transform: rotate(0deg);}
     25%{ transform: rotate(15deg);}
     50%{ transform: rotate(-46deg);}
-    100%{ transform: rotate(0deg);}
 }
 
 .hand {
@@ -283,14 +278,13 @@
     transform-origin: 100% 0%;
 }
 .move-right-hand{
-   @include animation(movelh 4s 1 ease-in-out); 
+   @include animation(movelh 2s 1 ease-in-out); 
 }
 
-@keyframes movelh
+@include keyframes(movelh) 
 {
-    0%{ transform: rotate(26deg);}
+    0%, 100%{ transform: rotate(26deg);}
     50%{ transform: rotate(116deg);}
-    100%{ transform: rotate(26deg);}
 }
 
 .hand-left {
@@ -301,14 +295,13 @@
     transform-origin: 0% 0%;
 }
 .move-left-hand{
-   @include animation(moverh 4s 1 ease-in-out); 
+   @include animation(moverh 2s 1 ease-in-out); 
 }
 
-@keyframes moverh
+@include keyframes(moverh)
 {
-    0%{ transform: rotate(27deg);}
+    0%, 100%{ transform: rotate(27deg);}
     50%{ transform: rotate(-80deg);}
-    100%{ transform: rotate(27deg);}
 }
 
 
@@ -349,25 +342,25 @@
     background-position: 0px 740px;
 }
 
-@keyframes walk
+@include keyframes(walk)
 {
     0%{ background-position: 0 -600px;}
     100%{ background-position: 0 -900px;}
 }
 
-@keyframes way
+@include keyframes(way)
 {
   0% { transform:translateX(0);}
   100% { transform:translateX(-220px); }
 }
 
-@keyframes wisper
+@include keyframes(wisper)
 {
       0%{ background-position: 0 -1062px;}
     100%{ background-position: 0 -845px;} 
 }
 
-@keyframes stay
+@include keyframes (stay)
 {
    0%{ background-position: 0 -1062px;} 
  100%{ background-position: 0 -1062px;}

@@ -1,4 +1,5 @@
 @import 'modules/colors';
+@import 'modules/mixins';
 
 header {
   width: 100%;
@@ -16,7 +17,7 @@ header h1 {
 
 header span {
   font-size: 4vh;
-  animation: fadein 4s 1 ease-in;
+  @include animation(fadein 4s 1 ease-in);
 }
 
 header span:after {
@@ -25,7 +26,7 @@ header span:after {
   width: 10em;
   display: block;
   margin: 0 auto; 
-  animation: grow 6s 1 ease;
+  @include animation(grow 6s 1 ease);
 }
 
 @keyframes grow {
@@ -34,7 +35,7 @@ header span:after {
 }
 
 .fadein {
-  animation: fadein 8s 1 ease; 
+  @include animation(fadein 8s 1 ease); 
 }
 
 @keyframes fadein {
