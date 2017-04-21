@@ -64,11 +64,12 @@
     position: relative;
     margin-top: 60px;
     margin-left: 25px;
+    transform: rotate(-8deg);
     border: 3px solid #B37E15;
     border-radius: 200px 90px 300px 200px;
     box-shadow: inset -2px -2px 3px #B37E15;
     @include gradient-banana(#F9DC75, #F3C23B, #ECB82B, #E6CE56, #D7A227, #B37E15);
-    transform: rotate(-8deg);
+    
 }
 
 .banana:before {
@@ -112,24 +113,6 @@
     border-radius: 200px;
 }
 
-.banana-end {
-    width: 10px;
-    height: 21px;
-    display: block;
-    border-radius: 20px 10px 10px 20px;
-    position: absolute;
-    z-index: 3;
-    top: 145px;
-    left: 20px;
-    transform: rotate(16deg);
-    background-image: linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
-    background-image: -o-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
-    background-image: -moz-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
-    background-image: -webkit-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
-    background-image: -ms-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
-    background-image: -webkit-gradient( linear, left top, right bottom, color-stop(0.33, #71571F), color-stop(0.48, #5E4616), color-stop(0.84, #1F1603));
-}
-
 .banana-top {
     height: 45px;
     width: 25px;
@@ -147,6 +130,27 @@
     background-image: -ms-linear-gradient(left top, #CDCA0C 66%, #FFC916 100%);
     background-image: -webkit-gradient( linear, left top, right bottom, color-stop(0.66, #CDCA0C), color-stop(1, #FFC916));
 }
+
+.banana-end {
+    width: 10px;
+    height: 21px;
+    display: block;
+    border-radius: 20px 10px 10px 20px;
+    position: absolute;
+    z-index: 3;
+    top: 145px;
+    left: 20px;
+    transform: rotate(16deg);
+//    background-image: linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
+//    background-image: -o-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
+//    background-image: -moz-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
+//    background-image: -webkit-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
+//    background-image: -ms-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
+//    background-image: -webkit-gradient( linear, left top, right bottom, color-stop(0.33, #71571F), color-stop(0.48, #5E4616), color-stop(0.84, #1F1603));
+    @include end(#71571F, #5E4616, #1F1603);
+}
+
+
 
 .eye {
     width: 20px;
