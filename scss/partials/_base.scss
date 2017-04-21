@@ -1,4 +1,6 @@
-    * {
+@import 'modules/colors';
+
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -36,7 +38,7 @@
     width: 100%;
     margin: 0;
     border: 0;
-    background-color: #617dbb;
+    background-color: $main-color;
     font-family: 'Lobster', 'Arial', cursive;
     font-size: 30px;
     text-align: center;
@@ -46,6 +48,7 @@
     color: rgba(255, 255, 255, 1);
     position: absolute;
     z-index: 10;
+    cursor: pointer;
     &:hover {
         opacity: 0.4;
     }
@@ -156,7 +159,7 @@
     background: #fff;
     z-index: 3;
     border-radius: 50%;
-    border: 1px solid black;
+    border: 1px solid #000;
 }
 
 .left {
@@ -347,7 +350,7 @@
     font-size: 37px;
 }
 
-/*animated div*/
+/*beginn drowing wizard animation*/
 .wizard{
     position: absolute;
     height: 70px;
@@ -393,7 +396,9 @@ canvas{
     height: 170px;
     width: 240px;
 }
+/*end drowing wizard animation*/
 
+/*control buttons*/
 .control{
     height: 30px;
     width: 307px;
@@ -417,7 +422,7 @@ button{
 }
 
 #write{
-    background-color: #7c2aac;
+    background-color: $wizard-color;
     color: #fff;
     font-size: 15px;
     padding: 5px 15px;
@@ -425,7 +430,7 @@ button{
 
 input{
     border: none;
-    border-bottom: 3px solid #7c2aac; 
+    border-bottom: 3px solid $wizard-color; 
     font-family:'Pangolin', cursive;
     font-size: 18px;
 }
