@@ -3,6 +3,7 @@ $(function(){
     var $coverDivs = $('.cover');
     
     $coverDivs.on('click', function(){
+        $coverDivs.removeClass('hidden');
         $(this).addClass('hidden');
     }) 
     
@@ -55,7 +56,7 @@ $(function(){
                 }
             }
            setTimeout(writing, 4000);
-       ctx.clearRect(0, 0, canvas.width, canvas.height);//zmienić bo nie dokońca dobrze działa
+       ctx.clearRect(0, 0, canvas.width, canvas.height);//zmienić bo nie do końca dobrze działa
         input.value = '';
     })
    //end wizard animation
