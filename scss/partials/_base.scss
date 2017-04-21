@@ -1,4 +1,5 @@
 @import 'modules/colors';
+@import 'modules/mixins';
 
 * {
     padding: 0;
@@ -66,12 +67,7 @@
     border: 3px solid #B37E15;
     border-radius: 200px 90px 300px 200px;
     box-shadow: inset -2px -2px 3px #B37E15;
-    background-image: linear-gradient(left top, #F9DC75 57%, #F3C23B 63%, #ECB82B 70%, #E6CE56 74%, #D7A227 83%, #B37E15 96%);
-    background-image: -o-linear-gradient(left top, #F9DC75 57%, #F3C23B 63%, #ECB82B 70%, #E6CE56 74%, #D7A227 83%, #B37E15 96%);
-    background-image: -moz-linear-gradient(left top, #F9DC75 57%, #F3C23B 63%, #ECB82B 70%, #E6CE56 74%, #D7A227 83%, #B37E15 96%);
-    background-image: -webkit-linear-gradient(left top, #F9DC75 57%, #F3C23B 63%, #ECB82B 70%, #E6CE56 74%, #D7A227 83%, #B37E15 96%);
-    background-image: -ms-linear-gradient(left top, #F9DC75 57%, #F3C23B 63%, #ECB82B 70%, #E6CE56 74%, #D7A227 83%, #B37E15 96%);
-    background-image: -webkit-gradient( linear, left top, right bottom, color-stop(0.57, #F9DC75), color-stop(0.63, #F3C23B), color-stop(0.7, #ECB82B), color-stop(0.74, #E6CE56), color-stop(0.83, #D7A227), color-stop(0.96, #B37E15));
+    @include gradient-banana(#F9DC75, #F3C23B, #ECB82B, #E6CE56, #D7A227, #B37E15);
     transform: rotate(-8deg);
 }
 
@@ -334,14 +330,8 @@
     position: relative;
     height: 200px;
     width: 300px;
-    background: rgba(98, 125, 77, 1);
-    background: -moz-linear-gradient(top, rgba(98, 125, 77, 1) 4%, rgba(98, 125, 77, 1) 45%, rgba(31, 59, 8, 1) 100%);
-    background: -webkit-gradient(left top, left bottom, color-stop(4%, rgba(98, 125, 77, 1)), color-stop(45%, rgba(98, 125, 77, 1)), color-stop(100%, rgba(31, 59, 8, 1)));
-    background: -webkit-linear-gradient(top, rgba(98, 125, 77, 1) 4%, rgba(98, 125, 77, 1) 45%, rgba(31, 59, 8, 1) 100%);
-    background: -o-linear-gradient(top, rgba(98, 125, 77, 1) 4%, rgba(98, 125, 77, 1) 45%, rgba(31, 59, 8, 1) 100%);
-    background: -ms-linear-gradient(top, rgba(98, 125, 77, 1) 4%, rgba(98, 125, 77, 1) 45%, rgba(31, 59, 8, 1) 100%);
-    background: linear-gradient(to bottom, rgba(98, 125, 77, 1) 4%, rgba(98, 125, 77, 1) 45%, rgba(31, 59, 8, 1) 100%);
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#627d4d', endColorstr='#1f3b08', GradientType=0);
+    @include gradient-write(rgba(98, 125, 77, 1), rgba(31, 59, 8, 1));
+    @include filter-write(#627d4d, #1f3b08);
     border-bottom: 4px solid rgb(192, 192, 192);
     box-shadow: 0px 5px 0px 0px rgb(216, 216, 216);
     margin: 20px auto 100px auto;
