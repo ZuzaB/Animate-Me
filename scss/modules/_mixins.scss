@@ -1,3 +1,9 @@
+@mixin animation($value...){
+    -webkit-animation: $value;
+    -moz-animation: $value;
+    animation: $value;
+}
+
 @mixin gradient-write($color1, $color2){
     background: $color1;
     background: -moz-linear-gradient(top, $color1 4%, $color1 45%, $color2 100%);

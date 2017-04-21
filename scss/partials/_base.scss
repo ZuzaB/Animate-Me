@@ -123,12 +123,7 @@
     z-index: 3;
     transform: rotate(-16deg);
     border-right: 3px solid #B37E15;
-    background-image: linear-gradient(left top, #CDCA0C 66%, #FFC916 100%);
-    background-image: -o-linear-gradient(left top, #CDCA0C 66%, #FFC916 100%);
-    background-image: -moz-linear-gradient(left top, #CDCA0C 66%, #FFC916 100%);
-    background-image: -webkit-linear-gradient(left top, #CDCA0C 66%, #FFC916 100%);
-    background-image: -ms-linear-gradient(left top, #CDCA0C 66%, #FFC916 100%);
-    background-image: -webkit-gradient( linear, left top, right bottom, color-stop(0.66, #CDCA0C), color-stop(1, #FFC916));
+    @include top(#CDCA0C, #FFC916);
 }
 
 .banana-end {
@@ -141,16 +136,8 @@
     top: 145px;
     left: 20px;
     transform: rotate(16deg);
-//    background-image: linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
-//    background-image: -o-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
-//    background-image: -moz-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
-//    background-image: -webkit-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
-//    background-image: -ms-linear-gradient(left top, #71571F 33%, #5E4616 48%, #1F1603 84%);
-//    background-image: -webkit-gradient( linear, left top, right bottom, color-stop(0.33, #71571F), color-stop(0.48, #5E4616), color-stop(0.84, #1F1603));
     @include end(#71571F, #5E4616, #1F1603);
 }
-
-
 
 .eye {
     width: 20px;
@@ -184,7 +171,7 @@
 }
 
 .move-eyeballs{
-    animation: movee 3s 1;
+    @include animation(movee 3s 1);
 }
 
 @keyframes movee
@@ -219,7 +206,7 @@
 }
 
 .move-mouth{
-    animation: movem 2s 1 ease;
+    @include animation(movem 2s 1 ease);
 }
 
 @keyframes movem
@@ -244,7 +231,7 @@
 }
 
 .move-right-leg{
-   animation: moverl 4s 1 ease-in-out; 
+   @include animation(moverl 4s 1 ease-in-out); 
 }
 
 @keyframes moverl
@@ -269,7 +256,7 @@
 }
 
 .move-left-leg{
-   animation: movell 4s 1 ease-in-out; 
+   @include animation(movell 4s 1 ease-in-out); 
 }
 
 @keyframes movell
@@ -296,7 +283,7 @@
     transform-origin: 100% 0%;
 }
 .move-right-hand{
-   animation: movelh 4s 1 ease-in-out; 
+   @include animation(movelh 4s 1 ease-in-out); 
 }
 
 @keyframes movelh
@@ -314,7 +301,7 @@
     transform-origin: 0% 0%;
 }
 .move-left-hand{
-   animation: moverh 4s 1 ease-in-out; 
+   @include animation(moverh 4s 1 ease-in-out); 
 }
 
 @keyframes moverh
@@ -356,7 +343,7 @@
 }
 
 .animation{
-    animation: walk 1s steps(4) infinite, way 7s 1 ease-in-out, wisper 700ms 7s steps(3), stay 100ms 7.5s; 
+    @include animation(walk 1s steps(4) infinite, way 7s 1 ease-in-out, wisper 700ms 7s steps(3), stay 100ms 7.5s); 
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     background-position: 0px 740px;
