@@ -54,7 +54,7 @@ $(function(){
                     if (i < txt.length) requestAnimationFrame(writing);
                 }
             }
-           setTimeout(writing, 8000);
+           setTimeout(writing, 4000);
        ctx.clearRect(0, 0, canvas.width, canvas.height);//zmienić bo nie dokońca dobrze działa
         input.value = '';
     })

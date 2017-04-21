@@ -204,10 +204,10 @@
 }
 
 .move-mouth{
-    @include animation(movem 2s 1 ease);
+     @include animation(movem 2s 1 ease);
 }
 
-@inculde keyframes(movem)
+@include keyframes(movem)
 {
     0%, 100%{border-radius: 50%;}
     50%{border-radius: 26%;}
@@ -336,7 +336,7 @@
 }
 
 .animation{
-    @include animation(walk 1s steps(4) infinite, way 7s 1 ease-in-out, wisper 700ms 7s steps(3), stay 100ms 7.5s); 
+    @include animation(walk 1s steps(4) infinite, way 3s 1 ease-in-out, wisper 700ms 3s steps(3), stay 100ms 3.5s); 
     -webkit-animation-fill-mode: forwards;
     animation-fill-mode: forwards;
     background-position: 0px 740px;
