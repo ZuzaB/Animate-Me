@@ -85,7 +85,7 @@ $(function(){
     var arrClasses = ['move-left-hand', 'move-right-hand', 'move-left-leg', 'move-right-leg', 'move-mouth', 'move-eyeballs'];
     
     
-//animation demos    
+    //animation demos    
     for(let j=0; j< arrClasses.length; j++){
         arrCtrl[j].on('mouseenter', function(){
           arrPart[j].addClass(arrClasses[j]); 
@@ -95,70 +95,66 @@ $(function(){
         })
    } 
     
-//animation sequences
-    
-    function moveLeftHand(){
-        $handLeft.addClass('move-left-hand');
-        setTimeout(function(){$handLeft.removeClass('move-left-hand');}, 4000);
+    //animations 
+    function moveLeftHand(time){
+        setTimeout(function(){$handLeft.addClass('move-left-hand');}, time);
+        setTimeout(function(){$handLeft.removeClass('move-left-hand');}, time+2000);
     }
     
-    function moveRightHand(){
-        $handRight.addClass('move-right-hand');
-        setTimeout(function(){$handRight.removeClass('move-right-hand');}, 4000);
+    function moveRightHand(time){
+        setTimeout(function(){$handRight.addClass('move-right-hand');}, time);
+        setTimeout(function(){$handRight.removeClass('move-right-hand');}, time+2000);
     }
     
-    function moveLeftLeg(){
-        $legLeft.addClass('move-left-leg');
-        setTimeout(function(){$legLeft.removeClass('move-left-leg');}, 4000);
+    function moveLeftLeg(time){
+        setTimeout(function(){$legLeft.addClass('move-left-leg');}, time);
+        setTimeout(function(){$legLeft.removeClass('move-left-leg');}, time+2000);
     }
    
-    function moveRightLeg(){
-        $legRight.addClass('move-right-leg');
-        setTimeout(function(){$legRight.removeClass('move-right-leg');}, 4000);
+    function moveRightLeg(time){
+        setTimeout(function(){$legRight.addClass('move-right-leg');}, time);
+        setTimeout(function(){$legRight.removeClass('move-right-leg');}, time+2000);
     }
     
-    function moveMouth(){
-        $mouth.addClass('move-mouth');
-        setTimeout(function(){$mouth.removeClass('move-mouth');}, 2000);
+    function moveMouth(time){
+        setTimeout(function(){$mouth.addClass('move-mouth');}, time);
+        setTimeout(function(){$mouth.removeClass('move-mouth');}, time+2000);
     }
     
-    function moveEyeballs(){
-        $eyeBalls.addClass('move-eyeballs');
-        setTimeout(function(){$eyeBalls.removeClass('move-eyeballs');}, 3000);
+    function moveEyeballs(time){
+        setTimeout(function(){$eyeBalls.addClass('move-eyeballs');}, time);
+        setTimeout(function(){$eyeBalls.removeClass('move-eyeballs');}, time+2000);
     }
     
     var arrAnimation = [];
     var $buttons = $control.children();
     
- //getting information about animation sequene   
+ //getting information about animation sequence   
     $buttons.on('click', function(){
         var className = $(this).attr('class');
-        arrAnimation.push(className);
-       
-    })
-    
+        arrAnimation.push(className); 
+    });
     
     $animate.on('click', function(){
          console.log(arrAnimation);
-        console.log('arrAnimation');
         for (var i=0; i< arrAnimation.length; i++){
             if (arrAnimation[i] === 'eyeballs'){
-                moveEyeballs();
+                moveEyeballs(i*2000);
             }
             if(arrAnimation[i] === 'mouth'){
-                moveMouth();
+                moveMouth(i*2000);
             }
             if(arrAnimation[i] === 'left-hand'){
-                moveLeftHand();
+                moveLeftHand(i*2000);
             }
             if(arrAnimation[i] === 'right-hand'){
-               moveRightHand();
+               moveRightHand(i*2000);
             }
             if(arrAnimation[i] === 'left-leg'){
-                moveLeftLeg();
+                moveLeftLeg(i*2000);
             }
             if(arrAnimation[i] === 'right-leg'){
-                moveRightLeg();
+                moveRightLeg(i*2000);
             }
          }
     })
