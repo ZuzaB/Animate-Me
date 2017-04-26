@@ -156,7 +156,7 @@ $(function(){
             if(arrAnimation[i] === 'right-leg'){
                 moveRightLeg(i*2000);
             }
-         }
+         }arrAnimation = [];
     })
     
 })
