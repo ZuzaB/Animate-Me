@@ -23,10 +23,11 @@ $(function(){
     ctx.font = '30px Pangolin, cursive, sans-serif';
     ctx.lineWidth = 3;
     ctx.lineJoin = 'round';
-    ctx.globalAlpha = 2/3; //może nie być potrzebne
+    ctx.globalAlpha = 2/3;
     ctx.strokeStyle = ctx.fillStyle = '#fff';    
-
+    
     button.addEventListener('click', function () {
+        
         var inputVal = input.value;
         var txt = '';
         
@@ -38,28 +39,32 @@ $(function(){
              txt = inputVal;
              }else{
              txt = "your text is too long";
-        }
-            function writing() {
-                ctx.clearRect(x, 0, 60, 150);
-                ctx.setLineDash([dashLen - dashOffset, dashOffset - speed]);
-                dashOffset -= speed;
-                ctx.strokeText(txt[i], x, 90);
+             }
+        function writing() {
+            ctx.clearRect(x, 0, 60, 150);
+            ctx.setLineDash([dashLen - dashOffset, dashOffset - speed]);
+            dashOffset -= speed;
+            ctx.strokeText(txt[i], x, 90);
 
-                if (dashOffset > 0) requestAnimationFrame(writing);
-                else {
-                    ctx.fillText(txt[i], x, 90);
-                    dashOffset = dashLen;
-                    x += ctx.measureText(txt[i++]).width + ctx.lineWidth * Math.random();
-                    ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());
-                    ctx.rotate(Math.random() * 0.005);
-                    if (i < txt.length) requestAnimationFrame(writing);
-                }
+            if (dashOffset > 0) requestAnimationFrame(writing);
+            else {
+                ctx.fillText(txt[i], x, 90);
+                dashOffset = dashLen;
+                x += ctx.measureText(txt[i++]).width + ctx.lineWidth * Math.random();
+                ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());
+                ctx.rotate(Math.random() * 0.005);
+                if (i < txt.length) requestAnimationFrame(writing);
             }
-           setTimeout(writing, 4000);
-       ctx.clearRect(0, 0, canvas.width, canvas.height);//zmienić bo nie do końca dobrze działa
+        }
+        setTimeout(writing, 4000);
+        
+        ctx.clearRect(0, 0, canvas.width, canvas.height); //zmienić bo nie do końca dobrze działa
         input.value = '';
-    })
-   //end wizard animation
+        input.onfocus = function(){
+        wizard.classList.remove('animation');
+        }
+        });
+//end wizard animation
     
  //banana animation
     var $banana = $('.banana');
@@ -156,7 +161,8 @@ $(function(){
             if(arrAnimation[i] === 'right-leg'){
                 moveRightLeg(i*2000);
             }
-         }arrAnimation = [];
+         }
+        arrAnimation = [];
     })
     
 })
