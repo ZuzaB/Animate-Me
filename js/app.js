@@ -1,6 +1,6 @@
 $(function(){  
   
-    var $coverDivs = $('.cover');
+    const $coverDivs = $('.cover');
     
     $coverDivs.on('click', function(){
         $coverDivs.removeClass('hidden');
@@ -8,16 +8,16 @@ $(function(){
     }) 
     
 //wizard animation
-    var canvas = document.querySelector('canvas');
-    var input = document.querySelector('input');
-    var button = document.getElementById('write');
-    var wizard = document.querySelector('.wizard');
+    const canvas = document.querySelector('canvas');
+    const input = document.querySelector('input');
+    const button = document.getElementById('write');
+    const wizard = document.querySelector('.wizard');
     
     function write(txt){
         let ctx = canvas.getContext('2d'), 
             dashLen = 220, 
             dashOffset = dashLen, 
-            speed = 5, 
+            speed = 10, 
             x = 0, i = 0;
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.font = '30px Pangolin, cursive, sans-serif';
@@ -46,7 +46,7 @@ $(function(){
     
     button.addEventListener('click', function(){
         
-        var inputVal = input.value;
+        let inputVal = input.value;
         
         if (inputVal.length == 0){
  
@@ -68,27 +68,27 @@ $(function(){
 //end wizard animation
     
  //banana animation
-    var $banana = $('.banana');
-    var $eyeBalls = $banana.find('.eye-ball');
-    var $handRight = $banana.find('.hand-right');
-    var $handLeft = $banana.find('.hand-left');
-    var $legRight = $banana.find('.leg-right');
-    var $legLeft = $banana.find('.leg-left');
-    var $mouth = $banana.find('.smile');
+    const $banana = $('.banana');
+    const $eyeBalls = $banana.find('.eye-ball');
+    const $handRight = $banana.find('.hand-right');
+    const $handLeft = $banana.find('.hand-left');
+    const $legRight = $banana.find('.leg-right');
+    const $legLeft = $banana.find('.leg-left');
+    const $mouth = $banana.find('.smile');
     
     //control buttons
-    var $control = $('.control');
-    var $leftHandCtrl = $control.find('.left-hand');
-    var $rightHandCtrl = $control.find('.right-hand');
-    var $leftLegCtrl = $control.find('.left-leg');
-    var $rightLegCtrl = $control.find('.right-leg');
-    var $eyeballsCtrl = $control.find('.eyeballs');
-    var $mouthCtrl = $control.find('.mouth');
-    var $animate = $('.go');
+    const $control = $('.control');
+    const $leftHandCtrl = $control.find('.left-hand');
+    const $rightHandCtrl = $control.find('.right-hand');
+    const $leftLegCtrl = $control.find('.left-leg');
+    const $rightLegCtrl = $control.find('.right-leg');
+    const $eyeballsCtrl = $control.find('.eyeballs');
+    const $mouthCtrl = $control.find('.mouth');
+    const $animate = $('.go');
    
-    var arrPart = [$handLeft, $handRight, $legLeft, $legRight, $mouth, $eyeBalls];
-    var arrCtrl = [$leftHandCtrl, $rightHandCtrl, $leftLegCtrl, $rightLegCtrl, $mouthCtrl, $eyeballsCtrl];
-    var arrClasses = ['move-left-hand', 'move-right-hand', 'move-left-leg', 'move-right-leg', 'move-mouth', 'move-eyeballs'];
+    const arrPart = [$handLeft, $handRight, $legLeft, $legRight, $mouth, $eyeBalls];
+    const arrCtrl = [$leftHandCtrl, $rightHandCtrl, $leftLegCtrl, $rightLegCtrl, $mouthCtrl, $eyeballsCtrl];
+    const arrClasses = ['move-left-hand', 'move-right-hand', 'move-left-leg', 'move-right-leg', 'move-mouth', 'move-eyeballs'];
     
     
     //animation demos    
@@ -132,18 +132,18 @@ $(function(){
         setTimeout(function(){$eyeBalls.removeClass('move-eyeballs');}, time+2000);
     }
     
-    var arrAnimation = [];
-    var $buttons = $control.children();
+    let arrAnimation = [];
+    const $buttons = $control.children();
     
  //getting information about animation sequence   
     $buttons.on('click', function(){
-        var className = $(this).attr('class');
+        let className = $(this).attr('class');
         arrAnimation.push(className); 
     });
     
     $animate.on('click', function(){
          console.log(arrAnimation);
-        for (var i=0; i< arrAnimation.length; i++){
+        for (let i=0; i< arrAnimation.length; i++){
             if (arrAnimation[i] === 'eyeballs'){
                 moveEyeballs(i*2000);
             }
