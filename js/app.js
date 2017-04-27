@@ -11,59 +11,60 @@ $(function(){
     var canvas = document.querySelector('canvas');
     var input = document.querySelector('input');
     var button = document.getElementById('write');
-    
-    var ctx = canvas.getContext('2d');
-    var dashLen = 220;
-    var dashOffset = dashLen;
-    var speed = 5;//może zmienić na 2
-    var x = 0;
-    var i = 0;
     var wizard = document.querySelector('.wizard');
-  
-    ctx.font = '30px Pangolin, cursive, sans-serif';
-    ctx.lineWidth = 3;
-    ctx.lineJoin = 'round';
-    ctx.globalAlpha = 2/3;
-    ctx.strokeStyle = ctx.fillStyle = '#fff';    
     
-    button.addEventListener('click', function () {
+    function write(txt){
+        let ctx = canvas.getContext('2d'), 
+            dashLen = 220, 
+            dashOffset = dashLen, 
+            speed = 5, 
+            x = 0, i = 0;
+        ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
+        ctx.font = '30px Pangolin, cursive, sans-serif';
+        ctx.lineWidth = 3;
+        ctx.lineJoin = 'round';
+        ctx.globalAlpha = 2/3;
+        ctx.strokeStyle = ctx.fillStyle = '#fff'; 
+        
+            (function writingLoop() {
+                ctx.clearRect(x, 0, 60, 150);
+                ctx.setLineDash([dashLen - dashOffset, dashOffset - speed]);
+                dashOffset -= speed;
+                ctx.strokeText(txt[i], x, 90);
+
+                if (dashOffset > 0) requestAnimationFrame(writingLoop);
+                else {
+                    ctx.fillText(txt[i], x, 90);
+                    dashOffset = dashLen;
+                    x += ctx.measureText(txt[i++]).width + ctx.lineWidth * Math.random();
+                    ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());
+                    ctx.rotate(Math.random() * 0.005);
+                    if (i < txt.length) requestAnimationFrame(writingLoop);
+                }
+            })();
+    }
+    
+    button.addEventListener('click', function(){
         
         var inputVal = input.value;
-        var txt = '';
-        
-        wizard.classList.add('animation');
         
         if (inputVal.length == 0){
-            txt = ' ';
+ 
         }else if(inputVal.length <= 18){
-             txt = inputVal;
+            wizard.classList.add('animation');
+            setTimeout(function(){write(inputVal);},4000);
              }else{
-             txt = "your text is too long";
+                wizard.classList.add('animation');
+                setTimeout(function(){write("your text is too long");},4000);
              }
-        function writing() {
-            ctx.clearRect(x, 0, 60, 150);
-            ctx.setLineDash([dashLen - dashOffset, dashOffset - speed]);
-            dashOffset -= speed;
-            ctx.strokeText(txt[i], x, 90);
 
-            if (dashOffset > 0) requestAnimationFrame(writing);
-            else {
-                ctx.fillText(txt[i], x, 90);
-                dashOffset = dashLen;
-                x += ctx.measureText(txt[i++]).width + ctx.lineWidth * Math.random();
-                ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());
-                ctx.rotate(Math.random() * 0.005);
-                if (i < txt.length) requestAnimationFrame(writing);
-            }
-        }
-        setTimeout(writing, 4000);
-        
-        ctx.clearRect(0, 0, canvas.width, canvas.height); //zmienić bo nie do końca dobrze działa
+    //clearing input and animation
         input.value = '';
         input.onfocus = function(){
-        wizard.classList.remove('animation');
+            wizard.classList.remove('animation');
+            write(' ');
         }
-        });
+    });
 //end wizard animation
     
  //banana animation
