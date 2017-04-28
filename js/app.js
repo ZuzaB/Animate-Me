@@ -15,15 +15,14 @@ $(function(){
     
     function write(txt){
         let ctx = canvas.getContext('2d'), 
-            dashLen = 220, 
+            dashLen = 100, 
             dashOffset = dashLen, 
-            speed = 10, 
+            speed = 8, 
             x = 0, i = 0;
         ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height);
         ctx.font = '30px Pangolin, cursive, sans-serif';
-        ctx.lineWidth = 3;
+        ctx.lineWidth = 1;
         ctx.lineJoin = 'round';
-        ctx.globalAlpha = 2/3;
         ctx.strokeStyle = ctx.fillStyle = '#fff'; 
         
             (function writingLoop() {
@@ -36,9 +35,8 @@ $(function(){
                 else {
                     ctx.fillText(txt[i], x, 90);
                     dashOffset = dashLen;
-                    x += ctx.measureText(txt[i++]).width + ctx.lineWidth * Math.random();
-                    ctx.setTransform(1, 0, 0, 1, 0, 3 * Math.random());
-                    ctx.rotate(Math.random() * 0.005);
+                    x += ctx.measureText(txt[i++]).width + ctx.lineWidth;
+                    ctx.setTransform(1, 0, 0, 1, 0, 3);
                     if (i < txt.length) requestAnimationFrame(writingLoop);
                 }
             })();
@@ -142,7 +140,7 @@ $(function(){
     });
     
     $animate.on('click', function(){
-         console.log(arrAnimation);
+         //console.log(arrAnimation);
         for (let i=0; i< arrAnimation.length; i++){
             if (arrAnimation[i] === 'eyeballs'){
                 moveEyeballs(i*2000);
