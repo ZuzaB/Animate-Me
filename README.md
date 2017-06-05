@@ -18,4 +18,4 @@ More animations comming soon!
 ## Technologies:
 
 1. Banana animation: HTML, Sass, jQuery.
-2. Write animation: HTML, Sass, Vanilla JS, Canvas.
+2. Write animation: HTML, Sass, Vanilla JS, Canvas (based on the [post](https://www.codementor.io/epistemex/how-to-make-a-write-on-effect-using-html5-canvas-and-javascript-only-du107si9v)).
